@@ -32,20 +32,27 @@ class Solution:
                 length+=1
         # print res
         k = 0
-        for c in range(len(string)-1,0,-1):
-            # print len(string)
-            print(c)
+        for c in range(oldLength-1,0,-1):
+            # print(c)
+            # print(string[c])
+
             if(string[c] == ' '):
                 # print 1
                 k+=1
-                for d in range(c+3,oldLength+3*k):
-                    string[d] = string[d-3]
+                for i in range(2):
+                    string+='1'
+                for d in range(oldLength-1,c,-1):
+                    # print(d)
+
+                    print(string)
+                    string[d+2] = string[d]
                 string[c] = '%'
                 string[c+1] = '2'
                 string[c+2] = '0'
         # print string
-        return length
-			
+        print(string)
+        return len(string)
+            
 
 A = Solution()
 print(A.replaceBlank(list("hello world"),20))
