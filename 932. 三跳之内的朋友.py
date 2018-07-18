@@ -14,31 +14,25 @@ class Solution:
 				relationShipMap[a[i]].append(b[i])
 			else:
 				relationShipMap[a[i]] = [b[i]]
-		print(relationShipMap)
+
 		for i in range(len(c)):
-			print(self.isThreeJumps(relationShipMap,c,d))
-			# print(relationShipMap,c[i],d[i])
+			relationShipMap,c[i],d[i]
 
 	def isThreeJumps(self,relationShipMap,c,d):
 		count = 0
 		res = False
-		result = []
-		for i in range(len(c)):
-			if(d[i] in relationShipMap[c[i]]):
+			if(d in relationShipMap[c]):
 				res = True
 			else:
-				for s1 in relationShipMap[c[i]]:
-					if(d[i] in relationShipMap[s1]):
-						res = True
+    			for d1 in relationShipMap[c]:
+					if(d in relationShipMap[d1]):
+    					res = True
 					else:
-						for s2 in relationShipMap[d[i]]:
-							if(d[i] in relationShipMap[s2]):
-								res = True
+    					for d2 in relationShipMap[d1]:
+    						if(d in relationShipMap[d2]):
+    							res = True
 							else:
-								continue
-			res = False
-			result.append(res)
-		return result
+    							continue	
 			
 
 A = Solution()
